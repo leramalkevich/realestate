@@ -22,8 +22,20 @@ window.onload = function () {
     let clientsName = form[0];
     let clientsEmail = form[1];
     let clientsPhone = form[2];
+    let checkboxInput = form[3];
+    let checkboxErrorMessage = document.getElementById('checkbox-error');
 
-    form[3].onchange = function () {
+    document.getElementById('action-button').onclick = function () {
+        form.scrollIntoView({behavior: "smooth"});
+    };
+    document.getElementById('advantage-button').onclick = function () {
+        form.scrollIntoView({behavior: "smooth"});
+    };
+    document.getElementById('footer-button').onclick = function () {
+        form.scrollIntoView({behavior: "smooth"});
+    };
+
+    checkboxInput.onchange = function () {
         if (this.checked) {
             console.log('Agreed');
             return true;
@@ -52,24 +64,39 @@ window.onload = function () {
         let isValid = true;
 
         if (!clientsName.value || !clientsName.value.match(/^[A-Z][a-z]+\s*$/)) {
-            alert('Please, enter your name.');
+            clientsName.classList.add('invalid');
+            clientsName.nextElementSibling.style.display = 'block';
             isValid = false;
+        } else {
+            clientsName.classList.remove('invalid');
+            clientsName.nextElementSibling.style.display = 'none';
         }
         if (!clientsEmail.value || !clientsEmail.value.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
-            alert('Please, enter your email.');
+            clientsEmail.classList.add('invalid');
+            clientsEmail.nextElementSibling.style.display = 'block';
             isValid = false;
+        } else {
+            clientsEmail.classList.remove('invalid');
+            clientsEmail.nextElementSibling.style.display = 'none';
         }
 
         if (!clientsPhone.value && !clientsPhone.value.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/)) {
-            alert('Please, enter your phone number.');
+            clientsPhone.classList.add('invalid');
+            clientsPhone.nextElementSibling.style.display = 'block';
             isValid = false;
+        } else {
+            clientsPhone.classList.remove('invalid');
+            clientsPhone.nextElementSibling.style.display = 'none';
         }
 
-        if (!form[3].checked) {
-            alert('You should accept Privacy policy.');
+        if (!checkboxInput.checked) {
+            checkboxInput.classList.add('invalid');
+            checkboxErrorMessage.style.display = 'block';
             isValid = false;
+        } else {
+            checkboxInput.classList.remove('invalid');
+            checkboxErrorMessage.style.display = 'none';
         }
-
         return isValid;
     }
 

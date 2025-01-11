@@ -323,7 +323,8 @@ input {
     background: transparent;
     padding: 20px 25px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     color: black;
 }
 
@@ -333,6 +334,7 @@ input::placeholder {
 }
 
 .info-terms {
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
@@ -490,4 +492,18 @@ input::placeholder {
     padding: 20px;
     box-shadow: rgba(178, 151, 11, 0.5) 0px 6px 24px 0px, rgba(178, 151, 11, 0.8) 0px 0px 0px 1px;
     background: rgb(207, 177, 15);
+}
+
+.invalid {
+    border: 1px solid red;
+}
+
+.error {
+    display: none;
+    color: red;
+    font-size: 13px;
+}
+
+.checkbox-error {
+    margin-top: 5px;
 }

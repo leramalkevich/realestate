@@ -100,7 +100,7 @@
                     <span>freehold ownership</span>
                 </div>
             </div>
-            <button class="button action-button">
+            <button class="button action-button" id="action-button">
                 GET APPOINTMENT
             </button>
         </div>
@@ -161,7 +161,7 @@
             </div>
             <div class="line"></div>
 
-            <button class="button advantage-button">
+            <button class="button advantage-button" id="advantage-button">
                 GET APPOINTMENT
             </button>
         </div>
@@ -179,18 +179,22 @@
             </h2>
             <div class="clients-data">
                 <div class="clients-name" id="clients-name">
-                    <input type="text" placeholder="Name, e.g. James" required id="name">
+                    <input type="text" placeholder="Name, e.g. James" id="name">
+                    <div class="error">Please, enter your name.</div>
                 </div>
                 <div class="clients-email" id="clients-email">
-                    <input type="email" placeholder="Email" required id="email">
+                    <input type="email" placeholder="Email" id="email">
+                    <div class="error">Please, enter your email.</div>
                 </div>
                 <div class="clients-phone" id="clients-phone">
-                    <input type="tel" placeholder="Phone number" required id="phone">
+                    <input type="tel" placeholder="Phone number" id="phone">
+                    <div class="error">Please, enter your phone number.</div>
                 </div>
             </div>
             <div class="info-terms">
                 <input type="checkbox" class="checkbox" name="terms" id="agreed">
                 <label for="agreed">I accept <a href="#">Privacy policy</a></label>
+                <div class="error checkbox-error" id="checkbox-error">You should accept Privacy policy.</div>
             </div>
             <button class="button submit-button" type="submit">Submit form</button>
         </form>
@@ -269,7 +273,7 @@
                     </svg>
                 </a>
             </div>
-            <button class="button order-button" type="button">ORDER</button>
+            <button class="button order-button" type="button" id="footer-button">ORDER</button>
         </div>
         <div class="footer-rights">
             <p class="rights first">
